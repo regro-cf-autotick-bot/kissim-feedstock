@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python >=3.6
+    - tqdm
     - numpy
     - pandas
     - scipy
