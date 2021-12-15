@@ -1,5 +1,5 @@
 {% set name = "kissim" %}
-{% set version = "0.4.1" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/volkamerlab/{{ name|lower }}/archive/v{{ version }}.tar.gz
-  sha256: a1a98fd1d55985a34b0cb721942d12494916ed860fab189261f31f1919afd7df
+  sha256: 7d02bd7c8afccd39ef93a86fd0657aff9e040808e59205ba88aef34cdb18d5cf
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - kissim = kissim.cli.main:main
 
@@ -22,6 +22,7 @@ requirements:
     - pip
   run:
     - python >=3.6
+    - tqdm
     - numpy
     - pandas
     - scipy
@@ -31,7 +32,6 @@ requirements:
     - ipywidgets
     - nglview
     - biopython <=1.77
-    - biopandas
     - opencadd
 
 test:
@@ -45,7 +45,7 @@ about:
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: 'Subpocket-based fingerprint for kinase pocket comparison'
+  summary: Subpocket-based fingerprint for kinase pocket comparison
   description: |
     Subpocket-based fingerprint for kinase pocket comparison
   doc_url: https://kissim.readthedocs.io/
