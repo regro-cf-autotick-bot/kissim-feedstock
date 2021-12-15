@@ -31,7 +31,6 @@ requirements:
     - ipywidgets
     - nglview
     - biopython <=1.77
-    - biopandas
     - opencadd
 
 test:
