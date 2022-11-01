@@ -1,5 +1,5 @@
 {% set name = "kissim" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/volkamerlab/{{ name|lower }}/archive/v{{ version }}.tar.gz
-  sha256: 7d02bd7c8afccd39ef93a86fd0657aff9e040808e59205ba88aef34cdb18d5cf
+  sha256: b0ab08ce659cdc9afcbf2e846fdf93d6420aea95233b9905b2ad379558b66c97
 
 build:
   noarch: python
