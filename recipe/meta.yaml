@@ -11,17 +11,17 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - kissim = kissim.cli.main:main
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - tqdm
     - numpy
     - pandas
@@ -35,6 +35,8 @@ requirements:
     - opencadd
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - kissim
   commands:
